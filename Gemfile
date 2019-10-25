@@ -51,3 +51,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
+gem 'devise'
