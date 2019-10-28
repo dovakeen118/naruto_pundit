@@ -5,7 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :missions
-  
+
   validates_presence_of :first_name, :last_name, :password
   validates :email, presence: true, uniqueness: true
+
+  enum role: [:user, :admin]
+  after_initialize :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.role ||= :user
+  end
 end
