@@ -12,13 +12,13 @@
     <div class="top-bar"
       <div class="top-bar-left">
         <ul class="menu">
-          <li class="menu-text"><%= link_to 'Hidden Leaf Village Shinobi', root_path %></li>
+          <li class="menu-text"><%= link_to 'Hidden Leaf Village', root_path %></li>
         </ul>
         <div class="top-bar-right">
           <ul class="menu">
             <% if signed_in? %>
-              <li>Hi, <%= current_user.first_name %></li>
-              <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
+              <li><%= link_to "Hi, #{current_user.first_name}!", edit_user_registration_path %></li>
+              <li><%= link_to 'Missions', missions_path %></li>
               <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "Sign in", new_user_session_path %></li>
