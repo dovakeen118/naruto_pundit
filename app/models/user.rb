@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :missions
-  
-  validates_presence_of :first_name, :last_name, :password
+
+  validates_presence_of :first_name, :last_name, :encrypted_password
   validates :email, presence: true, uniqueness: true
 end
