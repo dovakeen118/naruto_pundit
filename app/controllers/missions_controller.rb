@@ -25,6 +25,9 @@ class MissionsController < ApplicationController
   end
 
   def edit
+    if current_user.id != @mission.user_id
+      redirect_to @mission, notice: 'You are not authorized to edit this mission!'
+    end
   end
 
   def update
@@ -36,8 +39,12 @@ class MissionsController < ApplicationController
   end
 
   def destroy
-    @mission.destroy
-    redirect_to missions_url, notice: "Mission was successfully deleted!"
+    if current_user.id != @mission.user_id
+      redirect_to @mission, notice: 'You are not authorized to delete this mission!'
+    else
+      @mission.destroy
+      redirect_to missions_url, notice: "Mission was successfully deleted!"
+    end
   end
 
   private
