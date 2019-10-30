@@ -1,9 +1,11 @@
 class MissionsController < ApplicationController
   before_action :set_mission, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index]
+
+  after_action :verify_authorized
 
   def new
     @mission = Mission.new
+    authorize @mission
   end
 
   def create
@@ -15,19 +17,24 @@ class MissionsController < ApplicationController
     else
       render :new
     end
+    authorize @mission
   end
 
   def index
     @missions = Mission.all
+    authorize @missions
   end
 
   def show
+    authorize @mission
   end
 
   def edit
+    authorize @mission
   end
 
   def update
+    authorize @mission
     if @mission.update(new_mission_params)
       redirect_to @mission, notice: "Mission was successfully updated!"
     else
@@ -36,8 +43,12 @@ class MissionsController < ApplicationController
   end
 
   def destroy
-    @mission.destroy
-    redirect_to missions_url, notice: "Mission was successfully deleted!"
+    authorize @mission
+    if @mission.destroy
+      redirect_to missions_url, notice: "Mission was successfully deleted!"
+    else
+      redirect_to @mission, notice: 'You are not authorized to delete this mission!'
+    end
   end
 
   private

@@ -1,9 +1,10 @@
 <div class="callout">
-  <h1>All Users (<%= @users.count %>)</h1>
+  <h1>All Users (<%= @users.length %>)</h1>
 
-  <div class="callout">
-    <% @users.each do |user| %>
-      <li><%= user.first_name %> <%= user.last_name %> (role: <%= user.role %>) </li>
-    <% end %>
-  </div>
+  <% if current_user && current_user.admin? %>
+    <%= render partial: 'admin_user_view', users: @users %>
+  <% else %>
+    <%= render partial: 'user_view', users: @users %>
+  <% end %>
+
 </div>

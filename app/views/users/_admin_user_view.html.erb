@@ -1,0 +1,21 @@
+<% @users.each do |user| %>
+  <div class="callout">
+    <%= link_to user.first_name, user %>
+
+    <div>
+      <%= form_for(user) do |f| %>
+        <div class="field">
+          <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit 'Change Role' %>
+        </div>
+      <% end %>
+    </div>
+
+    <h5><%= link_to('Delete this User', user_path(user), method: :delete,
+      data: { confirm: 'Are you sure you want to delete this user?' }) unless user == current_user %></h5>
+
+  </div>
+<% end %>
