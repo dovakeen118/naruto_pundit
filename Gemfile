@@ -50,6 +50,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pry-rails', :group => :development
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'foundation-rails', '~> 6.5', '>= 6.5.3.0'
 gem 'autoprefixer-rails'
 gem 'webpacker', '~> 4.x'
