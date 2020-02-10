@@ -1,10 +1,10 @@
 # Naruto Pundit
 
 This application is an example of how to implement the Pundit Ruby gem for user authorization.
-The `master` branch is a work in progress to incorporate new technologies.
-The `starter-code` branch does not include Pundit - it is where you can start to add your roles for authorization.
-The `launch-run` branch includes Pundit policies for only Users.
-The `add-user-roles` branch includes Pundit policies for both Users and Missions.
+&nbsp;The `master` branch is a work in progress to incorporate new technologies.
+&nbsp;The `starter-code` branch does not include Pundit - it is where you can start to add your roles for authorization.
+&nbsp;The `launch-run` branch includes Pundit policies for only Users.
+&nbsp;The `add-user-roles` branch includes Pundit policies for both Users and Missions.
 
 Pundit repository: https://github.com/varvet/pundit
 
