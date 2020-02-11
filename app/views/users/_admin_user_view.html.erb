@@ -1,6 +1,6 @@
 <% @users.each do |user| %>
   <div class="callout">
-    <%= link_to user.first_name, user %>
+    <%= link_to user.full_name, user %>
 
     <div>
       <%= form_for(user) do |f| %>
