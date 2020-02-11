@@ -49,8 +49,15 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'pry-rails', :group => :development
+gem 'pry-rails', :groups => [:development, :test]
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'rspec-rails', group: [:development, :test]
+gem 'capybara', group: [:development, :test]
+gem 'factory_bot', group: [:development, :test]
+gem 'shoulda-matchers', group: [:development, :test], require: false
+gem 'valid_attribute', group: [:development, :test]
+gem 'database_cleaner', group: [:development, :test]
+gem 'launchy', group: [:development, :test]
 gem 'foundation-rails', '~> 6.5', '>= 6.5.3.0'
 gem 'autoprefixer-rails'
 gem 'webpacker', '~> 4.x'
