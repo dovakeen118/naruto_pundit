@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :missions
 
-  validates_presence_of :first_name, :last_name, :encrypted_password
+  validates_presence_of :full_name, :encrypted_password
   validates :email, presence: true, uniqueness: true
 end
