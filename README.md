@@ -1,24 +1,33 @@
-# README
+# Naruto Pundit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is an example of how to implement the Pundit Ruby gem for user authorization.\
+The `master` branch is a work in progress to incorporate new technologies.\
+The `starter-code` branch does not include Pundit - it is where you can start to add your roles for authorization.\
+The `add-user-roles` branch includes Pundit policies for both Users and Missions.
 
-Things you may want to cover:
+Pundit repository: https://github.com/varvet/pundit
 
-* Ruby version
+## Setup
+```
+Ruby version 2.4.5
+Rails version 5.2.3
+Bundler version 2.0.2
+```
 
-* System dependencies
+## Getting Started
+After you fork, clone, or download the repo, execute the following commands to run the application locally:
+```
+$ bundle
+```
 
-* Configuration
+To build the PostgreSQL database:
+```
+$ bundle exec rails db:create
+$ bundle exec rails db:migrate
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To view the app in development locally at https://localhost:3000/
+In a separate terminal window run the following:
+```
+$ rails s
+```
