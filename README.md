@@ -1,3 +1,5 @@
+[![Codeship Status for dovakeen118/naruto_pundit](https://app.codeship.com/projects/d6128a10-2fcc-0138-f6f0-3ade278cb526/status?branch=master)](https://app.codeship.com/projects/385135)
+
 # Naruto Pundit
 
 This application is an example of how to implement the Pundit Ruby gem for user authorization.\
